@@ -1,0 +1,73 @@
+\documentclass{article}
+
+\usepackage{polyglossia}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{logix}
+\usepackage[shortlabels]{enumitem}
+
+\pagestyle{empty} % No page numbering
+\setmainlanguage{hebrew}
+\setotherlanguage{english}
+\newfontfamily{\hebrewfont}{DavidLibre}[
+    Path=./DavidLibre/,
+    Extension = .ttf,
+    UprightFont=*-Regular,
+    BoldFont=*-Bold,
+]
+
+
+\begin{document}
+
+\section*{זהויות לוגיות}
+\noindent \begin{enumerate}[label=.\arabic*]
+    \item $\neg \left(\neg p \right) \equiv p $
+
+    \item $p \land p \equiv p \lor p \equiv p$ \\
+          $p \lor \neg p \equiv \True$ \\
+          $p \land \neg p \equiv \False$
+
+    \item $p \lor \False \equiv p$
+
+    \item $p \land \True \equiv p$
+
+    \item $p \lor \True \equiv \True$
+
+    \item $p \land \False \equiv \False$
+
+    \item חוק החילוף (קומוטטיביות): \\
+          $p \land q \equiv q \land p$ \\
+          $p \lor q \equiv q \lor p$ \\
+          $p \oplus q \equiv q \oplus p$ \\
+          $p \leftrightarrow q \equiv q \leftrightarrow p$
+
+    \item חוק הקיבוץ (אסוציאטיביות): \\
+          $\left( p \land q \right) \land r \equiv p \land \left( q \land r \right) $ \\
+          $\left( p \lor q \right) \lor r \equiv p \lor \left( q \lor r \right) $ \\
+          $\left( p \oplus q \right) \oplus r \equiv p \oplus \left( q \oplus r \right)$ \\
+          $\left( p \leftrightarrow q \right) \leftrightarrow r \equiv p \leftrightarrow \left( q \leftrightarrow r \right)$
+
+    \item חוק הפילוג: \\
+          $p \land \left( q \lor r \right) \equiv \left( p \land q \right) \lor \left( p \land r \right)$ \\
+          $p \lor \left( q \land r \right) \equiv \left( p \lor q \right) \land \left( p \lor r \right)$
+
+    \item חוק דה-מורגן: \\
+          $\neg \left( p \land q \right) \equiv \neg p \lor \neg q$ \\
+          $\neg \left( p \lor q \right) \equiv \neg p \land \neg q$
+
+    \item גרירה: \\
+          $p \rightarrow q \equiv \neg q \rightarrow \neg p \equiv \neg p \lor q$
+
+    \item הגדרת הXOR: \\
+          $p \oplus q \equiv \left( p \lor q \right) \land \neg \left( p \land q \right)$ \\
+          $p \oplus q \equiv (p \land \neg q) \lor (\neg p \land q)$
+    \item שלילת כמתים: \\
+          $\neg \exists_x P(x) \equiv \forall_x \neg P(x)$ \\
+          $\neg \forall_x P(x) \equiv \exists_x \neg P(x)$
+    \item כמת קיים בדיוק אחד: \\
+          $\exists!_x \equiv \exists_x \left(P(x) \land \neg \exists_y \left((y \neq x) \land P(y) \right) \right)$ \\
+          $\exists!_x \equiv \exists_x \left(P(x) \land \forall_y \left(P(y) \rightarrow (y = x) \right) \right)$
+
+\end{enumerate}
+
+\end{document}
