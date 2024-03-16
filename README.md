@@ -17,7 +17,7 @@ for more info please read on [installing extra packages](https://en.wikibooks.or
 ## Compiling the project
 To compile the project you need to use the extended LaTeX compiler(XeTeX).
 
-run the following command to compile:
+run the following command inside the current directory to compile:
 ```console
 xelatex main.tex
 ```
